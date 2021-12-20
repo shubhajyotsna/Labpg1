@@ -112,6 +112,16 @@ transform: translateY(-10px);
 .row {
   margin: 8px -16px;
 }
+.small-con3{
+	background: #000;
+	color:#8a8a8a;
+	font-size: 14px;
+	padding: 60px 0 20px;
+}
+.small-con3 p{
+	color: #8a8a8a;
+	margin-bottom: 20px;
+}
 
 
 /* Content */
@@ -124,18 +134,24 @@ transform: translateY(-10px);
 	display: block;
 	margin: 10px 0 10px 0;
 }
-@media screen and(max-width: 768){
-	.container{
-		background: #c5e8cf
-	}
+/* Tablet */
+/* 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .navbar {
+    width: 100%;
+  }
+  .container{
+  	width: 100%;
+  }
+  .categories{
+  	width: 80%;
+  }
+  
 }
-@media screen and(max-width: 992){
-	.container{
-		background: #cfa5d4
-	}
-}
-@media screen and(min-width: 769){
-	.container{
-		background: #cfa5d4
-	}
-}
+
+
+
+
+
+
