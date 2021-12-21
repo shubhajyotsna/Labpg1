@@ -39,48 +39,57 @@
         <li><a href="" class="btn">CONTACT US</a></li>
       </ul>
     </nav>  
-  </div>
+ </div>
       <br><br>
     </td></tr>
     <tr>
-      <td width=25%  align=center class="abc">
-        <img src="bus3.jpeg" id="left" width="100%">
+    
+</div>
         
       </td>
       <td  width=70% height=85% align=center class="abc">
-        <h1>Trending Places to Travel By BUS</h1>        
+        <h1>Trending Places to Travel By BUS</h1> 
+
+                <div class="w3-content " >
+  <img class="mySlides" src="travel12.jpeg" style="width:60%" height="80%">
+  <img class="mySlides" src="Travel6.jpeg" style="width:60%">
+  <img class="mySlides" src="travel8.jpeg" style="width:60%">
+  <img class="mySlides" src="travel13.jpg" style="width:60%">
+  <img class="mySlides" src="travel7.jpeg" style="width:60%">
+  <img class="mySlides" src="Travel5.jpeg" style="width:60%">
+  <h3>GALLERY VIEW</h3> <p>For true travellers, bus trips hold an exceptional charm. After all, the sense of thrill and adventure that a bus journey provides is unmatched! It really lets you observe life closely and experience it the local way. Travelling on a bus is a great way to discover a place and re-discover yourself</p>       
 <div class="row">
+
   <div class="column nature">
     <div class="content">
-      <img src="travel9.jpeg" alt="Mountains" style="width:80%">
+      <img src="travel9.jpeg" alt="Mountains" style="width:100%">
       <h4>GOA</h4>
-      <p><br>Goa has a tropical climate and can be visited all throughout the year <br>with each season offering an amazing experience to the travellers</p>
+      <p>Despite having relatively longer travel time, the Bangalore to Goa road trip is quite popular,<br> and for all the right reasons. On this almost 12 hour journey, </br>you get to watch the cityscape blend seamlessly into lush greenery, countless waterfalls<br></p>
     </div>
   </div>
   <div class="column nature">
     <div class="content">
       <img src="travel8.jpeg" alt="Lights" style="width:100%">
       <h4>Lights</h4>
-      <p>Lorem ipsum dolor..</p>
+      <p>Although both Shimla and Manali are popular tourist destinations,<br> this road trip will show you the unconventional sides of both the cities. </br>The bus trip takes nearly 8 hours with the River Beas following you all along the route.</p>
     </div>
   </div>
   <div class="column nature">
     <div class="content">
       <img src="travel11.jpeg" alt="Nature" style="width:100%" >
       <h4>Forest</h4>
-      <p>Lorem ipsum dolor..</p>
+      <p>LoA trip through the heart of Rajasthan, anyone? Going through the city of Ajmer,<br> the thrilling bus ride from Delhi to Udaipur gives </br>you the chance to explore Rajasthan and all the colourful diversity it offersrem ipsum dolor..</p>
     </div>
   </div>
 <div class="column nature">
     <div class="content">
       <img src="travel2.jpeg" alt="Nature" style="width:100%">
       <h4>GOA</h4>
-      <p>..</p>
+      <p>This bus journey showcases the best of Rajasthan. <br>The 8-hour journey is punctuated by smooth roads. </br>Keep your eyes and ears open, <br>as it is quite likely that you will spot Peacocks on this trip!</br></p>
     </div>
   </div>
-        <br><br><br><br><br><br><br>
-          You Can write your main content here
-        <br><br><br><br><br><br><br><br><br><br><br>
+       
+        
       </td>
     </tr>
     <tr><td align=center colspan=3>
@@ -89,6 +98,10 @@
       <div class="footer-col-1">
       <h3>Download Our App</h3>
       <p>Download App from Android and ios mobile App Store</p> 
+      <div class="app-logo">
+        <img src="play-store.png">
+        <img src="app-store.png">
+      </div>
     </div>
       <div class="footer-col-2">
       <img src="BUS7.png" alt="HTML" width="80px" height="80px">
@@ -113,11 +126,29 @@
       </ul> 
     </div>
     </div>
+    <hr>
+      <p class="copyright">copyright 2021 Bus Booking Syatem</p>
   </div>
 
     </td></tr>
   </div>
   </table>
+  <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}    
+  x[myIndex-1].style.display = "block";  
+  setTimeout(carousel, 2000); // 
+}
+</script>
 
 </body>
 </html>
