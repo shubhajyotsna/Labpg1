@@ -1,0 +1,48 @@
+body
+{
+	/* Hexadecimal value with color and 100% transparency*/
+background-color: #11ffee00;  /* Fully transparent */
+
+/* Special keyword values */
+background-color: transparent;
+
+/* HSL value with color and 100% transparency*/
+background-color: hsla(50, 33%, 25%, 1.00);  /* 100% transparent */
+
+/* RGB value with color and 100% transparency*/
+background-color: rgba(117, 190, 218, 1.0);  /* 100% transparent */
+background-image: url(bus.jpeg);
+background-position: center;
+background-size: cover;
+}
+.booking{
+	padding: 0 20px 20px;
+	text-align: center;
+	max-width: 350px;
+	border: 1px solid black;
+	margin: 10% auto 0;
+}
+.booking1{
+	padding: 0 10px 10px;
+	text-align: center;
+	margin-bottom: 5px;
+	margin-top: 10px;
+	font-size: 12px;
+	color: #fff;
+
+}
+.custom-select{
+	width: 151px;
+	display: inline-block;
+}
+.form-control
+{
+	font-size: 12px;
+	border-radius: 0;
+	color: #fff;
+
+}
+input: :placeholder
+{
+	color: #fff 
+}
