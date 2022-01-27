@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<head>
+<body>
+    <title>Reads the XML data using JavaScript</title>
+    <title>BUS MANAGEMENT System</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <table class="header" border=2 width=100% align=center>
+        <tr><td align=center colspan=3>
+          <br><br>
+          <div class="container">
+            <div class="navbar">
+        <div class="logo">
+          <img src="BUS7.png" alt="HTML" width="185px" height="150px">
+        </div>
+        <nav>
+          <ul>
+            <li><a href="webpage1.html" class="btn">HOME</a></li>
+            <li><a href="" class="btn">MY ACC</a></li>
+            <li><a href="" class="btn">PLACES</a></li>
+            <li><a href="webpage3.html" class="btn">OFFERS</a></li>
+            <li><a href="" class="btn">CONTACT US</a></li>
+          </ul>
+        </nav>  
+   
+
+    <!-- CSS -->
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            background-color: rgb(211, 233, 225);
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #9ecfdf
+        }
+
+        th {
+            background-color: #521b47;
+            color: white;
+        }
+
+        .button {
+            position: relative;
+            text-align: center;
+            padding: 20px;
+            padding-bottom: 20px;
+            border: 4px solid rgb(170, 163, 196);
+            background: rgba(209, 233, 207, 0.5);
+            color: rgb(230, 36, 78);
+            outline: none;
+            border-radius: 20px;
+            font-size: 25px;
+            width: 200px;
+            height: 70px;
+            display:inline-block;
+  			background: #07628a;
+  			color: white;
+  			padding: 8px 50px;
+  			margin: 10px 0;
+  			border-radius: 60px;
+
+        }
+
+        .button:hover {
+            color: black;
+            background: rgb(161, 224, 235);
+        }
+        .btn1{
+ 			display:inline-block;
+  			background: #3e758b;
+  			color: white;
+  			padding: 10px 50px;
+  			margin: 10px 0;
+  			border-radius: 60px;
+  			transition: background 0.5s;
+}
+.btn1:hover{
+  			background: grey;
+
+}
+    </style>
+
+    <!--JavaScript-->
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function () {
+
+                // Request finished and response 
+                // is ready and Status is "OK"
+                if (this.readyState == 4 && this.status == 200) {
+                    empDetails(this);
+                }
+            };
+
+            // employee.xml is the external xml file
+            xmlhttp.open("GET", "bus.xml", true);
+            xmlhttp.send();
+        }
+
+        function empDetails(xml) {
+            var i;
+            var xmlDoc = xml.responseXML;
+            var table =
+                `<tr><th>busid</th><th>Bus_type</th>
+                    <th>agency</th><th>seat_capacity</th>
+                </tr>`;
+
+            var x = xmlDoc.getElementsByTagName("Bus");
+
+
+            // Start to fetch the data by using TagName 
+            for (i = 0; i < x.length; i++) {
+                table += "<tr><td>" +
+                    x[i].getElementsByTagName("busid")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("bus_type")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("agency")[0]
+                    .childNodes[0].nodeValue + "</td><td>" +
+                    x[i].getElementsByTagName("seat_capacity")[0]
+                    .childNodes[0].nodeValue ;
+            }
+
+            // Print the xml data in table form
+            document.getElementById("id").innerHTML = table;
+        }
+        function remove(xml)
+        {
+           xmlDoc= loadXMLDoc('bus.xml');
+           y=xmlDoc.getElementsByTagName(xml)[0];
+           xmlDoc.documentElement.removeChild(y);
+           alert('The block ' + node + ' has been removed!');
+        }
+        function show(element)
+        {
+        xmlDoc = loadXMLDoc("bus.xml");
+
+         document.write("<b>Before remove operation, total agency  elements: </b>");
+         document.write(xmlDoc.getElementsByTagName("agency").length);
+         document.write("<br>");
+
+         x = xmlDoc.getElementsByTagName("agency")[0];
+         x.parentNode.removeChild(x);
+
+         document.write("<b>After remove operation, total agency elements: </b>");
+         document.write(xmlDoc.getElementsByTagName("agency").length);
+        }
+        
+         function change(xml) {
+         xmlDoc = loadXMLDoc("bus.xml");
+         var x;    
+         var txt = "";
+         x = xmlDoc.getElementsByTagName("busid")[0].childNodes[0];
+         txt +="value before:"+ x.nodeValue + "<br>";    
+         x.nodeValue = "value after:"+"<br>"+"100";
+        x = xmlDoc.getElementsByTagName("busid")[0].childNodes[0];
+        txt += x.nodeValue + "<br>";    
+        document.getElementById("demo").innerHTML = txt;
+        x=xmlDoc.getElementsByTagName(xml);
+            for(i=0;i<x.length;i++)
+            {
+                document.write(x[i].childNodes[0].nodeValue);
+                document.write("<br\>");
+            }
+        }
+        function Addnode(xml) 
+        {
+         var x, y, i, newElement, txt, xmlDoc;
+         xmlDoc = loadXMLDoc("bus.xml");
+        newElement = xmlDoc.createElement("Seat_no");
+        x = xmlDoc.getElementsByTagName("Bus")[0]
+        x.appendChild(newElement);
+
+   // Display all elements
+         xlen = x.childNodes.length;
+         y = x.firstChild;
+         txt = "";
+         for (i = 0; i < xlen; i++) {
+            if (y.nodeType == 1) {
+              txt += y.nodeName + "<br>";
+             }
+         y = y.nextSibling;
+          }
+          document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+     </div>
+    </div>
+    </div>
+
+    <center>
+        <button type="button" class="button" 
+            onclick="loadXMLDoc()">
+             Bus Details
+        </button>
+    </center>
+    <br><br>
+    <div class="container">
+    <input type="button" class="btn1" value="Remove" onclick="remove('Bus')"/>
+    <input type="button" class="btn1" value="Show" onclick="show('agency')"/>
+    <input type="button" class="btn1"value="change" onclick="change('busid')"/>
+    <input type="button" class="btn1"value="Addnode" onclick="Addnode('Bus')"/>
+    </div>
+    <table id="id"></table>
+</body>
+</head>
+</html>

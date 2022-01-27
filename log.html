@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Sign in
+        </title>
+        <link rel="stylesheet" href="style.css" type="text/css">
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+       
+    </head>
+    <body>
+        <div class="header">
+        <div class="main">
+            <div class="register">
+                <h2>Signup</h2>
+                <form id="register" method="post">
+                    <label for ="uname">Name :</label><br><br>
+                    <input id="uname" onkeypress="return test(event)" placeholder="UserName" type="text"/>
+                    <label>Your name</label>
+                    <input type="text" name="yourname" id="your-name"/>
+                    <p class="error hide">error</p>
+                    <span></span>
+                    <br><br>
+                    <label for ="email">Email :</label>
+                    <input type="email" name="email" id="email" placeholder="Enter Your email">
+                    <span></span>
+                    <br><br>
+                    <label for="number">Number:</label>
+                    <input type="number" name="number" id="number" placeholder="Enter Your number">
+                    <span></span>
+                    <br><br>
+                    <input type="text" class="passworduser">
+                    <div id="password_strength"></div>
+                    
+                    <input type="submit" name="submit" id="submit" placeholder="submit">
+
+                </form>
+
+            </div>
+
+        </div>
+        </div>
+        <form onsubmit="return validate()" action="webpage1.html">
+        </form>
+ 
+    </body>
+</html>
+<script>
+    
+    var email=document.getElementById('email');
+    var number=document.getElementById('number');
+    var span=document.getElementsByTagName('span'); 
+
+   
+
+   function validate()
+{
+    $('#txtName').keypress(function (e) {
+        var regex = new RegExp("^[a-zA-Z \s]+$");
+        var str = String.fromCharCode(!e.charCode ? e.which : e.charCode);
+        if (regex.test(str)) {
+            return true;
+        }
+        else
+        {
+        e.preventDefault();
+        alert('Please Enter Alphabate');
+        return false;
+        }
+    });
+
+    $(document).on('keyup', '.passworduser', function() {
+  var txtInput = $(this).val();
+  var regPass = "^(?=.*?[0-9])(?=.*?[A-Z])(?=.*?[#?!@$%^&*-_]).{8,}$";
+  var color = "Red";
+  if (txtInput.length > 7) {
+    if (!txtInput.match(regPass)) {
+      $('#password_strength').html("Include a special character and at least one capital letter");
+      $("#password_strength").css("color", color);
+
+    } else {
+      $('#password_strength').html("");
+
+    }
+  } else {
+    $('#password_strength').html("Password to be a minimum of 8 characters");
+    $("#password_strength").css("color", color);
+
+  }
+});
+   
+function test(event)
+        {
+            let code=event.which;
+            if(code>47&&code<58)
+            return false;
+            else
+            return true;
+        }
+
+        $('input').focus(function(){
+    $(this).parents('.input_cont').addClass('filled');
+});
+   
+$('input').blur(function(){
+    var inputValue = $(this).val();
+    if ( inputValue == "" ) {
+      $(this).parents('.input_cont').removeClass('filled');  
+    } else {
+      $(this).addClass('filled');
+    }
+  })  
+
+  document.getElementById("your-name").addEventListener("keypress",function(event){
+    const keys = /[0-9]/;
+    const label = event.target.parentNode.children[2];
+    console.log(label)
+    if(event.key.match(keys)){
+      label.classList.remove("hide")
+      label.innerText = "no digits allowed"
+      event.preventDefault()
+    }else{
+      label.classList.add("hide")
+    }
+  })
+       document.getElementById("phonenumber").addEventListener("keypress",function(event){
+    const regex = /[a-zA-Z]/;
+    const regex2 = /^[0-9]{10}$/;
+    const label = event.target.parentNode.children[2];
+    if(event.key.match(regex) || event.target.value.match(regex2)){
+      if(event.key.match(regex)){
+        label.classList.remove("hide")
+        label.innerText = "no alphabets allowed"
+      }
+      event.preventDefault()
+    }else if(!event.key.match(regex)){
+      label.classList.add("hide")
+    }
+  })
+
+    }
+</script>

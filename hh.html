@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function test(event)
+        {
+            let code=event.which;
+            if(code>47&&code<58)
+            return false;
+            else
+            return true;
+        }
+        function validate()
+        {
+           var username=document.getElementById("uname");
+           var password=document.getElementById("pass");
+           var email=document.getElementById('email');
+          var number=document.getElementById('number');
+         var span=document.getElementsByTagName('span'); 
+           if(username.value.trim()=="")
+           {
+               alert("Blank Username");
+               username.style.border="solid 3px red";
+               document.getElementById("lbuser").style.visibility="visible";
+               return false;
+           }
+           else if(password.value.trim()=="")
+           {
+               alert("Blank Password");
+               return false;
+           }
+           else if(password.value.trim().length<5)
+           {
+               alert("Password is too short");
+               return false;
+           }
+           email.onkeydown=function()
+            {
+       const regex1=/^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})$/;
+       const regex2= /^([a-z0-9\.-]+)@([a-z0-9]+)\.([a-z]{1,8})(.[a-z]{1,8})$/;
+       if(regex1.test(email.value)||regex2.test(email.value))
+       {
+         span[1].innerText="Your Email is Valid";
+         span[1].style.color="lime";  
+       }
+       else{
+           span[1].innerText="Invalid Email Id";
+           span[1].style.color="red";
+       }}
+       number.onkeydown=function()
+       {
+          const regnum=/^[0-9]{10}$/;
+          if(regnum.test(number.value))
+       {
+         span[2].innerText="Your Number is Valid";
+         span[2].style.color="lime";  
+       }
+       else{
+           span[2].innerText="Invalid Phone Number";
+           span[2].style.color="red";
+       }   
+       }
+    }
+
+    </script>
+    <form onsubmit="return validate()" action="index.html">
+        <input id="uname" onkeypress="return test(event)" placeholder="UserName" type="text"/>
+        <label id="lbuser" style="color: red; visibility: hidden;">Invalid User</label><br><br>
+        <input id="pass" placeholder="PassWord" type="password"/><br><br>
+        <label for ="email">Email :</label>
+        <input type="email" name="email" id="email" placeholder="Enter Your email">
+        <span></span>
+        <br><br>
+        <label for="number">Number:</label>
+        <input type="number" name="number" id="number" placeholder="Enter Your number">
+        <span></span>
+        <br><br>
+        <input type="submit" name="submit" id="submit" placeholder="submit">
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

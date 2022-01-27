@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Buses>
+    <Bus>
+        <busid>101</busid>
+        <bus_type>AC</bus_type>
+        <agency>RV travels</agency>
+        <seat_capacity>30</seat_capacity>
+    </Bus>
+    <Bus>
+       <busid>102</busid>
+        <bus_type>AC</bus_type>
+        <agency>Anki travels</agency>
+        <seat_capacity>40</seat_capacity>
+    </Bus>
+    <Bus>
+        <busid>103</busid>
+        <bus_type>NONAC</bus_type>
+        <agency>ABC travels</agency>
+        <seat_capacity>35</seat_capacity>
+    </Bus>
+    <Bus>
+        <busid>104</busid>
+        <bus_type>SLEEPER</bus_type>
+        <agency>Travels oop</agency>
+        <seat_capacity>45</seat_capacity>
+    </Bus>
+    <Bus>
+        <busid>105</busid>
+        <bus_type>NONAC</bus_type>
+        <agency>travel agency abc</agency>
+        <seat_capacity>36</seat_capacity>
+    </Bus>
+    <Bus>
+        <busid>106</busid>
+        <bus_type>AC</bus_type>
+        <agency>Rc travels</agency>
+        <seat_capacity>42</seat_capacity>
+    </Bus>
+    <Bus>
+        <busid>107</busid>
+        <bus_type>AC</bus_type>
+        <agency>Rv travels</agency>
+        <seat_capacity>39</seat_capacity>
+    </Bus>
+    <Bus>
+        <busid>108</busid>
+        <bus_type>SLEEPER</bus_type>
+        <agency>Eng travel</agency>
+        <seat_capacity>40</seat_capacity>
+    </Bus>
+     <Bus>
+        <busid>109</busid>
+        <bus_type>AC</bus_type>
+        <agency>Ruth agency</agency>
+        <seat_capacity>30</seat_capacity>
+    </Bus>
+</Buses> 

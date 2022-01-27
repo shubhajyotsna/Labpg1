@@ -1,48 +1,105 @@
-body
-{
-	/* Hexadecimal value with color and 100% transparency*/
-background-color: #11ffee00;  /* Fully transparent */
+*{
+	margin: 0;
+	padding:0 ;
 
-/* Special keyword values */
-background-color: transparent;
-
-/* HSL value with color and 100% transparency*/
-background-color: hsla(50, 33%, 25%, 1.00);  /* 100% transparent */
-
-/* RGB value with color and 100% transparency*/
-background-color: rgba(117, 190, 218, 1.0);  /* 100% transparent */
-background-image: url(bus.jpeg);
-background-position: center;
-background-size: cover;
 }
-.booking{
-	padding: 0 20px 20px;
+body{
+	background :url("bus4.jpeg");
+/*	background: rgb(224,222,237);
+   background: linear-gradient(180deg, rgba(224,222,237,1) 1%, rgba(236,236,244,1) 41%, rgba(162,219,230,1) 100%);*/
+	background-size: 100%;
+	/*background-position: -400px 0px;*/
+}
+div.main{
+	width: 400px;
+	margin: 100px auto 0px auto;
+
+}
+h2{
 	text-align: center;
-	max-width: 350px;
-	border: 1px solid black;
-	margin: 10% auto 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 20px;
+	font-family: sans-serif;
 }
-.booking1{
-	padding: 0 10px 10px;
+div.register{
+	background-color: rgba(0,0,0,0.5);
+	width: 100;
+	font-size: 18px;
+	border-radius: 10px;
+	border: 1px solid rgba (255,255,255,0.3) ;
+	box-shadow: 2px 2px 15px rgba(0,0,0,0.3);
+	color: #fff;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+form#register{
+	margin: 40px;
+}
+label{
+	font-family: sans-serif;
+	font-size: 18px;
+	font-style: italic;
+}
+
+input#uname{
+	width: 300px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	outline: 0;
+	padding: 7px;
+	background-color: #fff;
+	box-shadow: inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+input#pass{
+	width: 300px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	outline: 0;
+	padding: 7px;
+	background-color: #fff;
+	box-shadow: inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+input#email{
+	width: 300px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	outline: 0;
+	padding: 7px;
+	background-color: #fff;
+	box-shadow: inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+input#number{
+	width: 300px;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	outline: 0;
+	padding: 7px;
+	background-color: #fff;
+	box-shadow: inset 1px 1px 5px
+	rgba(0,0,0,0.3);
+}
+button#submit{
 	text-align: center;
-	margin-bottom: 5px;
-	margin-top: 10px;
-	font-size: 12px;
+	width: 300px;
+	padding: 7px;
+	font-size: 16px;
+	font-family: sans-serif;
+	font-weight: 600;
+	border: none;
+	border-radius: 3px;
+	background-color: rgba(250,100,0,0.8);
 	color: #fff;
+	cursor: pointer;
+	border: 1px solid rgba(255,255,255,0.3);
+	box-shadow: 1px 1px 5px
+	rgba(0,0,0,0.3);
 
 }
-.custom-select{
-	width: 151px;
-	display: inline-block;
-}
-.form-control
-{
-	font-size: 12px;
-	border-radius: 0;
-	color: #fff;
-
-}
-input: :placeholder
-{
-	color: #fff 
+label,span,h2{
+	text-shadow: 1px 1px 5px
+	rgba(0,0,0,0.3);
 }
